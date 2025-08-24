@@ -7,371 +7,375 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2487.7">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 12.0px 'Hiragino Sans'; font-kerning: none}
+    span.s3 {font: 12.0px Helvetica; font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ja"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="utf-8" /&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /&gt;</p>
-<p class="p1">&lt;title&gt;Clione: Buccal Cone Hunt (iPhone縦版)&lt;/title&gt;</p>
-<p class="p1">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</p>
-<p class="p1">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>:root { --glass: rgba(0,0,0,.45); --txt:#fff; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>html, body { height: 100%; margin: 0; background: radial-gradient(1200px 600px at 50% 0%, #0e2a40 0%, #06131b 70%); color: var(--txt); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.safe { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.wrap { display:flex; flex-direction:column; align-items:center; gap:10px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>h1 { margin: 4px 0 0; font-size: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.sub { opacity:.85; font-size: 14px; text-align:center; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.board { position:relative; width:min(100%, 420px); aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; box-shadow:0 10px 30px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.08); touch-action:none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>canvas { width:100%; height:100%; display:block; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hud { pointer-events:none; position:absolute; top:6px; left:6px; right:6px; display:flex; justify-content:space-between; gap:6px; font-weight:700; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pill { background:var(--glass); backdrop-filter: blur(5px); padding:6px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.08); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.overlay { position:absolute; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.6); backdrop-filter: blur(4px); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.card { max-width: 320px; text-align:center; padding:16px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.controls { position:absolute; left:0; right:0; bottom:6px; display:flex; justify-content:center; gap:8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>button { appearance:none; border:none; cursor:pointer; padding:12px 16px; border-radius:999px; font-weight:800; box-shadow:0 6px 16px rgba(0,0,0,.25); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn { background:#fff; color:#000; } .btn-g{background:#86efac;color:#000;} .btn-r{background:#fda4af;color:#000;} .btn-k{background:#000;color:#fff;border:1px solid rgba(255,255,255,.2);}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.combo { pointer-events:none; position:absolute; top:44px; left:50%; transform:translateX(-50%); text-align:center; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.bar { margin-top:4px; height:4px; width:120px; border-radius:999px; background:rgba(255,255,255,.2); overflow:hidden; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.bar&gt;i { display:block; height:100%; background:#fff; width:0%; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.footer { font-size:12px; opacity:.75; text-align:center; }</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;div class="safe"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Clione: Buccal Cone Hunt&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;画面ドラッグで移動・&lt;b&gt;Attack&lt;/b&gt;でバッカルコーン（外付けKBはSpace）。&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="board" id="board"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="cv"&gt;&lt;/canvas&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hud"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Score: &lt;b id="sc"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Time: &lt;b id="tm"&gt;60&lt;/b&gt;s&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Best: &lt;b id="bs"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="combo" id="comboWrap" style="display:none"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill" style="display:inline-block;background:rgba(244,63,94,.8);"&gt;Combo x&lt;b id="cx"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bar"&gt;&lt;i id="cb" style="width:0%"&gt;&lt;/i&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="overlay" id="ovl"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 style="margin:0 0 6px;font-size:18px;"&gt;遊び方&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="margin:0 0 10px;opacity:.9;font-size:14px;"&gt;画面ドラッグでクリオネが泳ぎます。&lt;br&gt;下の &lt;b&gt;Attack&lt;/b&gt; で捕食。連続ヒットでコンボ！&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="start1"&gt;スタート&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="controls"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" id="attack"&gt;Attack&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-g" id="start"&gt;スタート&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-k" id="help"&gt;ヘルプ&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer"&gt;iPhone向け単一HTML。GitHub Pagesで公開してください。&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const cv = document.getElementById('cv');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const board = document.getElementById('board');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const ctx = cv.getContext('2d');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const sc = document.getElementById('sc');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const tm = document.getElementById('tm');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const bs = document.getElementById('bs');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const comboWrap = document.getElementById('comboWrap');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const cx = document.getElementById('cx');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const cb = document.getElementById('cb');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const ovl = document.getElementById('ovl');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const start1 = document.getElementById('start1');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const start = document.getElementById('start');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const help = document.getElementById('help');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const attack = document.getElementById('attack');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// --- ここからゲームロジック全体 ---</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// （長いので省略せずすべて貼ります）</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>let running = false, score = 0, best = 0, timeLeft = 60;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let lastTs = 0, lastSpawn = 0, spawnInterval = 1100;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let timerId = null, req = 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let comboCnt = 0, comboDecay = 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const COMBO_WINDOW = 1200;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const game = {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>w: 360, h: 640,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cl: { x: 180, y: 360, vx:0, vy:0, ang: -Math.PI/2, sp:2.0, fr:0.94, cone:{active:false, t:0, maxLen:90, cd:0} },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>prey: [], parts: []</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function resize() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const dpr = Math.min(window.devicePixelRatio||1, 2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const rect = board.getBoundingClientRect();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>game.w = Math.floor(rect.width);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>game.h = Math.floor(rect.height);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.width = Math.floor(game.w * dpr);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.height = Math.floor(game.h * dpr);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.style.width = game.w + 'px';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.style.height = game.h + 'px';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>ctx.setTransform(dpr,0,0,dpr,0,0);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>addEventListener('resize', resize, {passive:true});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>resize();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Touch move</p>
-<p class="p1"><span class="Apple-converted-space">  </span>(function touchCtl(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let touching=false, tx=0, ty=0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function pos(e){ const r=cv.getBoundingClientRect(); const t=(e.touches&amp;&amp;e.touches[0])||e; return {x:t.clientX-r.left, y:t.clientY-r.top}; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchstart', e=&gt;{ touching=true; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchmove',<span class="Apple-converted-space">  </span>e=&gt;{ if(!touching) return; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchend', <span class="Apple-converted-space">  </span>e=&gt;{ touching=false; e.preventDefault(); }, {passive:false});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>(function tick(){ if(touching){ const cl=game.cl; const dx=tx-cl.x, dy=ty-cl.y; const L=Math.hypot(dx,dy)||1; cl.vx+=(dx/L)*0.5; cl.vy+=(dy/L)*0.5; cl.ang=Math.atan2(dy,dx);} requestAnimationFrame(tick); })();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>})();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Keyboard (optional)</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const keys = Object.create(null);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>addEventListener('keydown', e =&gt; { keys[e.key.toLowerCase()] = true; if(e.key===' ') e.preventDefault(); });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>addEventListener('keyup', <span class="Apple-converted-space">  </span>e =&gt; keys[e.key.toLowerCase()] = false);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function vibrate(p){ if(navigator.vibrate){ try{ navigator.vibrate(p); }catch(e){} } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function startGame(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>score=0; timeLeft=60; lastTs=0; lastSpawn=0; spawnInterval=1100;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>comboCnt=0; comboDecay=0; comboWrap.style.display='none';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const cl=game.cl; cl.x=game.w*0.5; cl.y=game.h*0.65; cl.vx=cl.vy=0; cl.ang=-Math.PI/2; cl.cone.active=false; cl.cone.t=0; cl.cone.cd=0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>game.prey.length=0; game.parts.length=0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>running=true; ovl.style.display='none'; start.textContent='一時停止';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>sc.textContent=score; tm.textContent=timeLeft;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(timerId) clearInterval(timerId);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>timerId=setInterval(()=&gt;{ if(!running) return; timeLeft--; if(timeLeft&lt;=0){ timeLeft=0; endGame(); } tm.textContent=timeLeft; },1000);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>req=requestAnimationFrame(loop);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function endGame(){ running=false; ovl.style.display='grid'; best=Math.max(best,score); bs.textContent=best; start.textContent='スタート'; if(timerId){ clearInterval(timerId); timerId=null; } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function doAttack(){ const c=game.cl.cone; if(c.cd&gt;0||c.active) return; c.active=true; c.t=0; c.cd=240; vibrate(8); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>attack.addEventListener('click', e=&gt;{ e.preventDefault(); doAttack(); });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>attack.addEventListener('touchstart', e=&gt;{ e.preventDefault(); doAttack(); }, {passive:false});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>start1.addEventListener('click', startGame);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>start.addEventListener('click', ()=&gt;{ if(!running) startGame(); else { running=false; start.textContent='スタート'; } });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>help.addEventListener('click', ()=&gt;{ ovl.style.display = (ovl.style.display==='none'?'grid':'none'); });</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function spawn(){ const t=Math.random(); if(t&lt;0.7){ const x=30+Math.random()*(game.w-60), y=-30, sp=0.8+Math.random()*1.3; game.prey.push({x,y,r:10+Math.random()*12,vx:(Math.random()-0.5)*0.6,vy:sp,w:Math.random()*Math.PI*2,a:true}); } else { const L=Math.random()&lt;0.5, x=L?-30:game.w+30, y=60+Math.random()*(game.h-180), sp=0.8+Math.random()*1.2; game.prey.push({x,y,r:10+Math.random()*12,vx=L?sp:-sp,vy:(Math.random()-0.5)*0.6,w:Math.random()*Math.PI*2,a:true}); } }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function parts(x,y){ for(let i=0;i&lt;12;i++){ const a=Math.random()*Math.PI*2, sp=Math.random()*2+0.5; game.parts.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:1}); } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function computeBonus(cnt){ return Math.floor(cnt/5); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function handleKeys(){ const k=keys, cl=game.cl, A=0.36; if(k[' ']) doAttack(); if(k['arrowleft']||k['a']) cl.vx-=cl.sp*A; if(k['arrowright']||k['d']) cl.vx+=cl.sp*A; if(k['arrowup']||k['w']) cl.vy-=cl.sp*A; if(k['arrowdown']||k['s']) cl.vy+=cl.sp*A; cl.vx*=cl.fr; cl.vy*=cl.fr; cl.x+=cl.vx; cl.y+=cl.vy; cl.x=Math.max(20, Math.min(game.w-20, cl.x)); cl.y=Math.max(20, Math.min(game.h-20, cl.y)); if(cl.vx||cl.vy) cl.ang=Math.atan2(cl.vy,cl.vx); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function updateCone(dt){ const c=game.cl.cone; if(c.cd&gt;0) c.cd-=dt; if(c.active){ c.t+=dt/200; if(c.t&gt;=1){ c.t=1; c.active=false; c.cd=Math.max(c.cd,150);} } else if(c.t&gt;0){ c.t-=dt/320; if(c.t&lt;0) c.t=0; } }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function onHit(x,y){ parts(x,y); comboCnt++; comboDecay=COMBO_WINDOW; comboWrap.style.display='block'; cx.textContent=comboCnt; const bonus=computeBonus(comboCnt); score += 1+bonus; sc.textContent=score; vibrate([12,40,12]); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function checkCollisions(){ const cl=game.cl, c=cl.cone; if(c.t&lt;=0.05) return; const len=c.maxLen*c.t, tipX=cl.x+Math.cos(cl.ang)*(28+len), tipY=cl.y+Math.sin(cl.ang)*(28+len); for(const p of game.prey){ if(!p.a) continue; const dx=p.x-tipX, dy=p.y-tipY; if(dx*dx+dy*dy&lt;(p.r+10)*(p.r+10)){ p.a=false; onHit(p.x,p.y);} } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function bg(){ const g=ctx.createLinearGradient(0,0,0,game.h); g.addColorStop(0,'#0b1f2e'); g.addColorStop(1,'#06131b'); ctx.fillStyle=g; ctx.fillRect(0,0,game.w,game.h); ctx.globalAlpha=.15; for(let i=0;i&lt;38;i++){ const x=(i*37+(Date.now()/9))%game.w, y=((i*101)%game.h)+Math.sin((Date.now()/900)+i)*8; ctx.beginPath(); ctx.arc(x,y,(i%6)+1,0,Math.PI*2); ctx.fillStyle='#9dd0ff'; ctx.fill(); } ctx.globalAlpha=1; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function drawCl(){ const cl=game.cl; ctx.save(); ctx.translate(cl.x,cl.y); ctx.rotate(cl.ang); ctx.beginPath(); ctx.ellipse(0,0,22,28,0,0,Math.PI*2); const b=ctx.createRadialGradient(-6,-8,5,0,0,30); b.addColorStop(0,'rgba(255,255,255,.9)'); b.addColorStop(1,'rgba(200,220,255,.1)'); ctx.fillStyle=b; ctx.fill(); ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=1.5; ctx.stroke(); ctx.save(); const flap=Math.sin(Date.now()/150)*0.4; ctx.rotate(flap); ctx.beginPath(); ctx.ellipse(-6,10,14,6,-.5,0,Math.PI*2); ctx.ellipse(-6,-10,14,6,.5,0,Math.PI*2); ctx.fillStyle='rgba(255,200,200,.35)'; ctx.fill(); ctx.restore(); if(cl.cone.t&gt;0){ const t=cl.cone.t, len=8+cl.cone.maxLen*t, w=6+10*(1-t); ctx.beginPath(); ctx.moveTo(18,-w*.5); ctx.quadraticCurveTo(18+len*.5,-w,18+len,0); ctx.quadraticCurveTo(18+len*.5,w,18,w*.5); const g=ctx.createLinearGradient(18,0,18+len,0); g.addColorStop(0,'rgba(255,170,170,.6)'); g.addColorStop(1,'rgba(255,120,120,.9)'); ctx.fillStyle=g; ctx.fill(); ctx.strokeStyle='rgba(255,160,160,.8)'; ctx.lineWidth=1; ctx.stroke(); ctx.beginPath(); for(let i=0;i&lt;5;i++){ const t2=i/4, px=18+len*(.7+.25*t2),</p>
-<p class="p2"><br></p>
-<p class="p1">```html</p>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ja"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="utf-8" /&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /&gt;</p>
-<p class="p1">&lt;title&gt;Clione: Buccal Cone Hunt (iPhone縦版)&lt;/title&gt;</p>
-<p class="p1">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</p>
-<p class="p1">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>:root { --glass: rgba(0,0,0,.45); --txt:#fff; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>html, body { height: 100%; margin: 0; background: radial-gradient(1200px 600px at 50% 0%, #0e2a40 0%, #06131b 70%); color: var(--txt); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.safe { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.wrap { display:flex; flex-direction:column; align-items:center; gap:10px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>h1 { margin: 4px 0 0; font-size: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.sub { opacity:.85; font-size: 14px; text-align:center; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.board { position:relative; width:min(100%, 420px); aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; box-shadow:0 10px 30px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.08); touch-action:none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>canvas { width:100%; height:100%; display:block; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hud { pointer-events:none; position:absolute; top:6px; left:6px; right:6px; display:flex; justify-content:space-between; gap:6px; font-weight:700; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.pill { background:var(--glass); backdrop-filter: blur(5px); padding:6px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.08); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.overlay { position:absolute; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.6); backdrop-filter: blur(4px); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.card { max-width: 320px; text-align:center; padding:16px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.controls { position:absolute; left:0; right:0; bottom:6px; display:flex; justify-content:center; gap:8px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>button { appearance:none; border:none; cursor:pointer; padding:12px 16px; border-radius:999px; font-weight:800; box-shadow:0 6px 16px rgba(0,0,0,.25); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn { background:#fff; color:#000; } .btn-g{background:#86efac;color:#000;} .btn-r{background:#fda4af;color:#000;} .btn-k{background:#000;color:#fff;border:1px solid rgba(255,255,255,.2);}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.combo { pointer-events:none; position:absolute; top:44px; left:50%; transform:translateX(-50%); text-align:center; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.bar { margin-top:4px; height:4px; width:120px; border-radius:999px; background:rgba(255,255,255,.2); overflow:hidden; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.bar&gt;i { display:block; height:100%; background:#fff; width:0%; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.footer { font-size:12px; opacity:.75; text-align:center; }</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;div class="safe"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Clione: Buccal Cone Hunt&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;画面ドラッグで移動・&lt;b&gt;Attack&lt;/b&gt;でバッカルコーン（外付けKBはSpace）。&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="board" id="board"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="cv"&gt;&lt;/canvas&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hud"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Score: &lt;b id="sc"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Time: &lt;b id="tm"&gt;60&lt;/b&gt;s&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Best: &lt;b id="bs"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="combo" id="comboWrap" style="display:none"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill" style="display:inline-block;background:rgba(244,63,94,.8);"&gt;Combo x&lt;b id="cx"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bar"&gt;&lt;i id="cb" style="width:0%"&gt;&lt;/i&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="overlay" id="ovl"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 style="margin:0 0 6px;font-size:18px;"&gt;遊び方&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="margin:0 0 10px;opacity:.9;font-size:14px;"&gt;画面ドラッグでクリオネが泳ぎます。&lt;br&gt;下の &lt;b&gt;Attack&lt;/b&gt; で捕食。連続ヒットでコンボ！&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="start1"&gt;スタート&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="controls"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" id="attack"&gt;Attack&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-g" id="start"&gt;スタート&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-k" id="help"&gt;ヘルプ&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer"&gt;iPhone向け単一HTML。GitHub Pagesで公開してください。&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const cv = document.getElementById('cv');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const board = document.getElementById('board');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const ctx = cv.getContext('2d');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const sc = document.getElementById('sc');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const tm = document.getElementById('tm');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const bs = document.getElementById('bs');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const comboWrap = document.getElementById('comboWrap');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const cx = document.getElementById('cx');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const cb = document.getElementById('cb');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const ovl = document.getElementById('ovl');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const start1 = document.getElementById('start1');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const start = document.getElementById('start');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const help = document.getElementById('help');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const attack = document.getElementById('attack');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>let running = false, score = 0, best = 0, timeLeft = 60;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let lastTs = 0, lastSpawn = 0, spawnInterval = 1100;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let timerId = null, req = 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let comboCnt = 0, comboDecay = 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const COMBO_WINDOW = 1200;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const game = {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>w: 360, h: 640,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cl: { x: 180, y: 360, vx:0, vy:0, ang: -Math.PI/2, sp:2.0, fr:0.94, cone:{active:false, t:0, maxLen:90, cd:0} },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>prey: [], parts: []</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// リサイズ</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function resize() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const dpr = Math.min(window.devicePixelRatio||1, 2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const rect = board.getBoundingClientRect();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>game.w = Math.floor(rect.width);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>game.h = Math.floor(rect.height);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.width = Math.floor(game.w * dpr);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.height = Math.floor(game.h * dpr);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.style.width = game.w + 'px';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.style.height = game.h + 'px';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>ctx.setTransform(dpr,0,0,dpr,0,0);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>addEventListener('resize', resize, {passive:true});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>resize();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// タッチ移動</p>
-<p class="p1"><span class="Apple-converted-space">  </span>(function touchCtl(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let touching=false, tx=0, ty=0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function pos(e){ const r=cv.getBoundingClientRect(); const t=(e.touches&amp;&amp;e.touches[0])||e; return {x:t.clientX-r.left, y:t.clientY-r.top}; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchstart', e=&gt;{ touching=true; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchmove',<span class="Apple-converted-space">  </span>e=&gt;{ if(!touching) return; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchend', <span class="Apple-converted-space">  </span>e=&gt;{ touching=false; e.preventDefault(); }, {passive:false});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>(function tick(){ if(touching){ const cl=game.cl; const dx=tx-cl.x, dy=ty-cl.y; const L=Math.hypot(dx,dy)||1; cl.vx+=(dx/L)*0.5; cl.vy+=(dy/L)*0.5; cl.ang=Math.atan2(dy,dx);} requestAnimationFrame(tick); })();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>})();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// キーボード入力（オプション）</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const keys = Object.create(null);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>addEventListener('keydown', e =&gt; { keys[e.key.toLowerCase()] = true; if(e.key===' ') e.preventDefault(); });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>addEventListener('keyup', <span class="Apple-converted-space">  </span>e =&gt; keys[e.key.toLowerCase()] = false);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function vibrate(p){ if(navigator.vibrate){ try{ navigator.vibrate(p); }catch(e){} } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function startGame(){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>score=0; timeLeft=60; lastTs=0; lastSpawn=0; spawnInterval=1100;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>comboCnt=0; comboDecay=0; comboWrap.style.display='none';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const cl=game.cl; cl.x=game.w*0.5; cl.y=game.h*0.65; cl.vx=cl.vy=0; cl.ang=-Math.PI/2; cl.cone.active=false; cl.cone.t=0; cl.cone.cd=0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>game.prey.length=0; game.parts.length=0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>running=true; ovl.style.display='none'; start.textContent='一時停止';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>sc.textContent=score; tm.textContent=timeLeft;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(timerId) clearInterval(timerId);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>timerId=setInterval(()=&gt;{ if(!running) return; timeLeft--; if(timeLeft&lt;=0){ timeLeft=0; endGame(); } tm.textContent=timeLeft; },1000);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>req=requestAnimationFrame(loop);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function endGame(){ running=false; ovl.style.display='grid'; best=Math.max(best,score); bs.textContent=best; start.textContent='スタート'; if(timerId){ clearInterval(timerId); timerId=null; } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function doAttack(){ const c=game.cl.cone; if(c.cd&gt;0||c.active) return; c.active=true; c.t=0; c.cd=240; vibrate(8); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>attack.addEventListener('click', e=&gt;{ e.preventDefault(); doAttack(); });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>attack.addEventListener('touchstart', e=&gt;{ e.preventDefault(); doAttack(); }, {passive:false});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>start1.addEventListener('click', startGame);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>start.addEventListener('click', ()=&gt;{ if(!running) startGame(); else { running=false; start.textContent='スタート'; } });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>help.addEventListener('click', ()=&gt;{ ovl.style.display = (ovl.style.display==='none'?'grid':'none'); });</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// 敵の生成</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function spawn(){ const t=Math.random(); if(t&lt;0.7){ const x=30+Math.random()*(game.w-60), y=-30, sp=0.8+Math.random()*1.3; game.prey.push({x,y,r:10+Math.random()*12,vx:(Math.random()-0.5)*0.6,vy:sp,w:Math.random()*Math.PI*2,a:true}); } else { const L=Math.random()&lt;0.5, x=L?-30:game.w+30, y=60+Math.random()*(game.h-180), sp=0.8+Math.random()*1.2; game.prey.push({x,y,r:10+Math.random()*12,vx:L?sp:-sp,vy:(Math.random()-0.5)*0.6,w:Math.random()*Math.PI*2,a:true}); } }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function parts(x,y){ for(let i=0;i&lt;12;i++){ const a=Math.random()*Math.PI*2, sp=Math.random()*2+0.5; game.parts.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:1}); } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function computeBonus(cnt){ return Math.floor(cnt/5); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function handleKeys(){ const k=keys, cl=game.cl, A=0.36; if(k[' ']) doAttack(); if(k['arrowleft']||k['a']) cl.vx-=cl.sp*A; if(k['arrowright']||k['d']) cl.vx+=cl.sp*A; if(k['arrowup']||k['w']) cl.vy-=cl.sp*A; if(k['arrowdown']||k['s']) cl.vy+=cl.sp*A; cl.vx*=cl.fr; cl.vy*=cl.fr; cl.x+=cl.vx; cl.y+=cl.vy; cl.x=Math.max(20, Math.min(game.w-20, cl.x)); cl.y=Math.max(20, Math.min(game.h-20, cl.y)); if(cl.vx||cl.vy) cl.ang=Math.atan2(cl.vy,cl.vx); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function updateCone(dt){ const c=game.cl.cone; if(c.cd&gt;0) c.cd-=dt; if(c.active){ c.t+=dt/200; if(c.t&gt;=1){ c.t=1; c.active=false; c.cd=Math.max(c.cd,150);} } else if(c.t&gt;0){ c.t-=dt/320; if(c.t&lt;0) c.t=0; } }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function onHit(x,y){ parts(x,y); comboCnt++; comboDecay=COMBO_WINDOW; comboWrap.style.display='block'; cx.textContent=comboCnt; const bonus=computeBonus(comboCnt); score += 1+bonus; sc.textContent=score; vibrate([12,40,12]); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function checkCollisions(){ const cl=game.cl, c=cl.cone; if(c.t&lt;=0.05) return; const len=c.maxLen*c.t, tipX=cl.x+Math.cos(cl.ang)*(28+len), tipY=cl.y+Math.sin(cl.ang)*(28+len); for(const p of game.prey){ if(!p.a) continue; const dx=p.x-tipX, dy=p.y-tipY; if(dx*dx+dy*dy&lt;(p.r+10)*(p.r+10)){ p.a=false; onHit(p.x,p.y);} } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// 描画</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function bg(){ const g=ctx.createLinearGradient(0,0,0,game.h); g.addColorStop(0,'#0b1f2e'); g.addColorStop(1,'#06131b'); ctx.fillStyle=g; ctx.fillRect(0,0,game.w,game.h); ctx.globalAlpha=.15; for(let i=0;i&lt;38;i++){ const x=(i*37+(Date.now()/9))%game.w, y=((i*101)%game.h)+Math.sin((Date.now()/900)+i)*8; ctx.beginPath(); ctx.arc(x,y,(i%6)+1,0,Math.PI*2); ctx.fillStyle='#9dd0ff'; ctx.fill(); } ctx.globalAlpha=1; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function drawCl(){ const cl=game.cl; ctx.save(); ctx.translate(cl.x,cl.y); ctx.rotate(cl.ang); ctx.beginPath(); ctx.ellipse(0,0,22,28,0,0,Math.PI*2); const b=ctx.createRadialGradient(-6,-8,5,0,0,30); b.addColorStop(0,'rgba(255,255,255,.9)'); b.addColorStop(1,'rgba(200,220,255,.1)'); ctx.fillStyle=b; ctx.fill(); ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=1.5; ctx.stroke(); ctx.save(); const flap=Math.sin(Date.now()/150)*0.4; ctx.rotate(flap); ctx.beginPath(); ctx.ellipse(-6,10,14,6,-.5,0,Math.PI*2); ctx.ellipse(-6,-10,14,6,.5,0,Math.PI*2); ctx.fillStyle='rgba(255,200,200,.35)'; ctx.fill(); ctx.restore(); if(cl.cone.t&gt;0){ const t=cl.cone.t, len=8+cl.cone.maxLen*t, w=6+10*(1-t); ctx.beginPath(); ctx.moveTo(18,-w*.5); ctx.quadraticCurveTo(18+len*.5,-w,18+len,0); ctx.quadraticCurveTo(18+len*.5,w,18,w*.5); const g=ctx.createLinearGradient(18,0,18+len,0); g.addColorStop(0,'rgba(255,170,170,.6)'); g.addColorStop(1,'rgba(255,120,120,.9)'); ctx.fillStyle=g; ctx.fill(); ctx.strokeStyle='rgba(255,160,160,.8)'; ctx.lineWidth=1; ctx.stroke(); ctx.beginPath(); for(let i=0;i&lt;5;i++){ const t2=i/4, px=18+len*(.7+.25*t2), py=(i%2===0?-1:1)*(w*.4+i*.4); ctx.moveTo(px,-py); ctx.lineTo(px+6,-py*1.1);} ctx.strokeStyle='rgba(255,200,200,.7)'; ctx.lineWidth=.6; ctx.stroke(); } ctx.beginPath(); ctx.arc(-6,-6,1.6,0,Math.PI*2); ctx.arc(-6,6,1.6,0,Math.PI*2); ctx.fillStyle='rgba(80,80,120,.9)'; ctx.fill(); ctx.restore(); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function drawPrey(dt){ for(const p of game.prey){ if(!p.a) continue; p.x+=p.vx; p.y+=p.vy+Math.sin((Date.now()/300)+p.w)*.3; if(p.x&lt;-60||p.x&gt;game.w+60||p.y&lt;-60||p.y&gt;game.h+60) p.a=false; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='#a9f5d0'; ctx.fill(); ctx.strokeStyle='#7ad0aa'; ctx.stroke(); ctx.beginPath(); ctx.arc(p.x+p.r*.2,p.y-p.r*.2,Math.max(1,p.r*.15),0,Math.PI*2); ctx.fillStyle='#2a5a50'; ctx.fill(); } for(const q of game.parts){ q.x+=q.vx; q.y+=q.vy; q.vx*=.98; q.vy*=.98; q.life-=dt/900; } game.parts=game.parts.filter(q=&gt;q.life&gt;0); ctx.save(); ctx.globalAlpha=.7; for(const q of game.parts){ ctx.beginPath(); ctx.arc(q.x,q.y,2,0,Math.PI*2); ctx.fillStyle='#ffd3d3'; ctx.fill(); } ctx.restore(); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function loop(ts){ if(!running) return; if(!lastTs) lastTs=ts; const dt=Math.min(34, ts-lastTs); lastTs=ts;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(comboDecay&gt;0){ comboDecay-=dt; const ratio=Math.max(0, Math.min(1, comboDecay/COMBO_WINDOW)); cb.style.width=(ratio*100)+'%'; if(comboDecay&lt;=0){ comboCnt=0; comboWrap.style.display='none'; } }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>lastSpawn+=dt; if(lastSpawn&gt;spawnInterval){ lastSpawn=0; spawn(); spawnInterval=Math.max(450, spawnInterval-10); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>handleKeys(); updateCone(dt); checkCollisions();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>bg(); drawPrey(dt); drawCl();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>req=requestAnimationFrame(loop);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>setInterval(()=&gt;{ game.prey = game.prey.filter(p=&gt;p.a); }, 1500);</p>
-<p class="p2"><br></p>
-<p class="p1">})();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="ja"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="utf-8" /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;Clione: Buccal Cone Hunt (iPhone</span><span class="s2">縦版</span><span class="s1">)&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>:root { --glass: rgba(0,0,0,.45); --txt:#fff; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>html, body { height: 100%; margin: 0; background: radial-gradient(1200px 600px at 50% 0%, #0e2a40 0%, #06131b 70%); color: var(--txt); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.safe { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.wrap { display:flex; flex-direction:column; align-items:center; gap:10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>h1 { margin: 4px 0 0; font-size: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.sub { opacity:.85; font-size: 14px; text-align:center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.board { position:relative; width:min(100%, 420px); aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; box-shadow:0 10px 30px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.08); touch-action:none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>canvas { width:100%; height:100%; display:block; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hud { pointer-events:none; position:absolute; top:6px; left:6px; right:6px; display:flex; justify-content:space-between; gap:6px; font-weight:700; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.pill { background:var(--glass); backdrop-filter: blur(5px); padding:6px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.08); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.overlay { position:absolute; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.6); backdrop-filter: blur(4px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.card { max-width: 320px; text-align:center; padding:16px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.controls { position:absolute; left:0; right:0; bottom:6px; display:flex; justify-content:center; gap:8px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>button { appearance:none; border:none; cursor:pointer; padding:12px 16px; border-radius:999px; font-weight:800; box-shadow:0 6px 16px rgba(0,0,0,.25); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn { background:#fff; color:#000; } .btn-g{background:#86efac;color:#000;} .btn-r{background:#fda4af;color:#000;} .btn-k{background:#000;color:#fff;border:1px solid rgba(255,255,255,.2);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.combo { pointer-events:none; position:absolute; top:44px; left:50%; transform:translateX(-50%); text-align:center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.bar { margin-top:4px; height:4px; width:120px; border-radius:999px; background:rgba(255,255,255,.2); overflow:hidden; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.bar&gt;i { display:block; height:100%; background:#fff; width:0%; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.footer { font-size:12px; opacity:.75; text-align:center; }</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="safe"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Clione: Buccal Cone Hunt&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;</span><span class="s2">画面ドラッグで移動・</span><span class="s1">&lt;b&gt;Attack&lt;/b&gt;</span><span class="s2">でバッカルコーン（外付け</span><span class="s1">KB</span><span class="s2">は</span><span class="s1">Space</span><span class="s2">）。</span><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="board" id="board"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;canvas id="cv"&gt;&lt;/canvas&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="hud"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Score: &lt;b id="sc"&gt;0&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Time: &lt;b id="tm"&gt;60&lt;/b&gt;s&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Best: &lt;b id="bs"&gt;0&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="combo" id="comboWrap" style="display:none"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill" style="display:inline-block;background:rgba(244,63,94,.8);"&gt;Combo x&lt;b id="cx"&gt;0&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bar"&gt;&lt;i id="cb" style="width:0%"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="overlay" id="ovl"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 style="margin:0 0 6px;font-size:18px;"&gt;</span><span class="s2">遊び方</span><span class="s1">&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p style="margin:0 0 10px;opacity:.9;font-size:14px;"&gt;</span><span class="s2">画面ドラッグでクリオネが泳ぎます。</span><span class="s1">&lt;br&gt;</span><span class="s2">下の</span><span class="s1"> &lt;b&gt;Attack&lt;/b&gt; </span><span class="s2">で捕食。連続ヒットでコンボ！</span><span class="s1">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="start1"&gt;</span><span class="s2">スタート</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="controls"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn" id="attack"&gt;Attack&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn-g" id="start"&gt;</span><span class="s2">スタート</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn-k" id="help"&gt;</span><span class="s2">ヘルプ</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="footer"&gt;iPhone</span><span class="s2">向け単一</span><span class="s1">HTML</span><span class="s2">。</span><span class="s1">GitHub Pages</span><span class="s2">で公開してください。</span><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cv = document.getElementById('cv');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const board = document.getElementById('board');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ctx = cv.getContext('2d');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const sc = document.getElementById('sc');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const tm = document.getElementById('tm');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const bs = document.getElementById('bs');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const comboWrap = document.getElementById('comboWrap');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cx = document.getElementById('cx');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cb = document.getElementById('cb');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ovl = document.getElementById('ovl');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const start1 = document.getElementById('start1');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const start = document.getElementById('start');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const help = document.getElementById('help');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const attack = document.getElementById('attack');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// --- </span><span class="s2">ここからゲームロジック全体</span><span class="s1"> ---</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">  </span>// </span><span class="s1">（長いので省略せずすべて貼ります）</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let running = false, score = 0, best = 0, timeLeft = 60;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let lastTs = 0, lastSpawn = 0, spawnInterval = 1100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let timerId = null, req = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let comboCnt = 0, comboDecay = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const COMBO_WINDOW = 1200;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const game = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>w: 360, h: 640,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cl: { x: 180, y: 360, vx:0, vy:0, ang: -Math.PI/2, sp:2.0, fr:0.94, cone:{active:false, t:0, maxLen:90, cd:0} },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>prey: [], parts: []</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function resize() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const dpr = Math.min(window.devicePixelRatio||1, 2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const rect = board.getBoundingClientRect();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>game.w = Math.floor(rect.width);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>game.h = Math.floor(rect.height);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.width = Math.floor(game.w * dpr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.height = Math.floor(game.h * dpr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.style.width = game.w + 'px';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.style.height = game.h + 'px';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.setTransform(dpr,0,0,dpr,0,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>addEventListener('resize', resize, {passive:true});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>resize();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// Touch move</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>(function touchCtl(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let touching=false, tx=0, ty=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function pos(e){ const r=cv.getBoundingClientRect(); const t=(e.touches&amp;&amp;e.touches[0])||e; return {x:t.clientX-r.left, y:t.clientY-r.top}; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchstart', e=&gt;{ touching=true; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchmove',<span class="Apple-converted-space">  </span>e=&gt;{ if(!touching) return; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchend', <span class="Apple-converted-space">  </span>e=&gt;{ touching=false; e.preventDefault(); }, {passive:false});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>(function tick(){ if(touching){ const cl=game.cl; const dx=tx-cl.x, dy=ty-cl.y; const L=Math.hypot(dx,dy)||1; cl.vx+=(dx/L)*0.5; cl.vy+=(dy/L)*0.5; cl.ang=Math.atan2(dy,dx);} requestAnimationFrame(tick); })();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>})();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// Keyboard (optional)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const keys = Object.create(null);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>addEventListener('keydown', e =&gt; { keys[e.key.toLowerCase()] = true; if(e.key===' ') e.preventDefault(); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>addEventListener('keyup', <span class="Apple-converted-space">  </span>e =&gt; keys[e.key.toLowerCase()] = false);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function vibrate(p){ if(navigator.vibrate){ try{ navigator.vibrate(p); }catch(e){} } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function startGame(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>score=0; timeLeft=60; lastTs=0; lastSpawn=0; spawnInterval=1100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>comboCnt=0; comboDecay=0; comboWrap.style.display='none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const cl=game.cl; cl.x=game.w*0.5; cl.y=game.h*0.65; cl.vx=cl.vy=0; cl.ang=-Math.PI/2; cl.cone.active=false; cl.cone.t=0; cl.cone.cd=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>game.prey.length=0; game.parts.length=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>running=true; ovl.style.display='none'; start.textContent='</span><span class="s2">一時停止</span><span class="s1">';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>sc.textContent=score; tm.textContent=timeLeft;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(timerId) clearInterval(timerId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>timerId=setInterval(()=&gt;{ if(!running) return; timeLeft--; if(timeLeft&lt;=0){ timeLeft=0; endGame(); } tm.textContent=timeLeft; },1000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>req=requestAnimationFrame(loop);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function endGame(){ running=false; ovl.style.display='grid'; best=Math.max(best,score); bs.textContent=best; start.textContent='</span><span class="s2">スタート</span><span class="s1">'; if(timerId){ clearInterval(timerId); timerId=null; } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function doAttack(){ const c=game.cl.cone; if(c.cd&gt;0||c.active) return; c.active=true; c.t=0; c.cd=240; vibrate(8); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>attack.addEventListener('click', e=&gt;{ e.preventDefault(); doAttack(); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>attack.addEventListener('touchstart', e=&gt;{ e.preventDefault(); doAttack(); }, {passive:false});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>start1.addEventListener('click', startGame);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>start.addEventListener('click', ()=&gt;{ if(!running) startGame(); else { running=false; start.textContent='</span><span class="s2">スタート</span><span class="s1">'; } });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>help.addEventListener('click', ()=&gt;{ ovl.style.display = (ovl.style.display==='none'?'grid':'none'); });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function spawn(){ const t=Math.random(); if(t&lt;0.7){ const x=30+Math.random()*(game.w-60), y=-30, sp=0.8+Math.random()*1.3; game.prey.push({x,y,r:10+Math.random()*12,vx:(Math.random()-0.5)*0.6,vy:sp,w:Math.random()*Math.PI*2,a:true}); } else { const L=Math.random()&lt;0.5, x=L?-30:game.w+30, y=60+Math.random()*(game.h-180), sp=0.8+Math.random()*1.2; game.prey.push({x,y,r:10+Math.random()*12,vx=L?sp:-sp,vy:(Math.random()-0.5)*0.6,w:Math.random()*Math.PI*2,a:true}); } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function parts(x,y){ for(let i=0;i&lt;12;i++){ const a=Math.random()*Math.PI*2, sp=Math.random()*2+0.5; game.parts.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:1}); } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function computeBonus(cnt){ return Math.floor(cnt/5); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function handleKeys(){ const k=keys, cl=game.cl, A=0.36; if(k[' ']) doAttack(); if(k['arrowleft']||k['a']) cl.vx-=cl.sp*A; if(k['arrowright']||k['d']) cl.vx+=cl.sp*A; if(k['arrowup']||k['w']) cl.vy-=cl.sp*A; if(k['arrowdown']||k['s']) cl.vy+=cl.sp*A; cl.vx*=cl.fr; cl.vy*=cl.fr; cl.x+=cl.vx; cl.y+=cl.vy; cl.x=Math.max(20, Math.min(game.w-20, cl.x)); cl.y=Math.max(20, Math.min(game.h-20, cl.y)); if(cl.vx||cl.vy) cl.ang=Math.atan2(cl.vy,cl.vx); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function updateCone(dt){ const c=game.cl.cone; if(c.cd&gt;0) c.cd-=dt; if(c.active){ c.t+=dt/200; if(c.t&gt;=1){ c.t=1; c.active=false; c.cd=Math.max(c.cd,150);} } else if(c.t&gt;0){ c.t-=dt/320; if(c.t&lt;0) c.t=0; } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function onHit(x,y){ parts(x,y); comboCnt++; comboDecay=COMBO_WINDOW; comboWrap.style.display='block'; cx.textContent=comboCnt; const bonus=computeBonus(comboCnt); score += 1+bonus; sc.textContent=score; vibrate([12,40,12]); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function checkCollisions(){ const cl=game.cl, c=cl.cone; if(c.t&lt;=0.05) return; const len=c.maxLen*c.t, tipX=cl.x+Math.cos(cl.ang)*(28+len), tipY=cl.y+Math.sin(cl.ang)*(28+len); for(const p of game.prey){ if(!p.a) continue; const dx=p.x-tipX, dy=p.y-tipY; if(dx*dx+dy*dy&lt;(p.r+10)*(p.r+10)){ p.a=false; onHit(p.x,p.y);} } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function bg(){ const g=ctx.createLinearGradient(0,0,0,game.h); g.addColorStop(0,'#0b1f2e'); g.addColorStop(1,'#06131b'); ctx.fillStyle=g; ctx.fillRect(0,0,game.w,game.h); ctx.globalAlpha=.15; for(let i=0;i&lt;38;i++){ const x=(i*37+(Date.now()/9))%game.w, y=((i*101)%game.h)+Math.sin((Date.now()/900)+i)*8; ctx.beginPath(); ctx.arc(x,y,(i%6)+1,0,Math.PI*2); ctx.fillStyle='#9dd0ff'; ctx.fill(); } ctx.globalAlpha=1; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function drawCl(){ const cl=game.cl; ctx.save(); ctx.translate(cl.x,cl.y); ctx.rotate(cl.ang); ctx.beginPath(); ctx.ellipse(0,0,22,28,0,0,Math.PI*2); const b=ctx.createRadialGradient(-6,-8,5,0,0,30); b.addColorStop(0,'rgba(255,255,255,.9)'); b.addColorStop(1,'rgba(200,220,255,.1)'); ctx.fillStyle=b; ctx.fill(); ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=1.5; ctx.stroke(); ctx.save(); const flap=Math.sin(Date.now()/150)*0.4; ctx.rotate(flap); ctx.beginPath(); ctx.ellipse(-6,10,14,6,-.5,0,Math.PI*2); ctx.ellipse(-6,-10,14,6,.5,0,Math.PI*2); ctx.fillStyle='rgba(255,200,200,.35)'; ctx.fill(); ctx.restore(); if(cl.cone.t&gt;0){ const t=cl.cone.t, len=8+cl.cone.maxLen*t, w=6+10*(1-t); ctx.beginPath(); ctx.moveTo(18,-w*.5); ctx.quadraticCurveTo(18+len*.5,-w,18+len,0); ctx.quadraticCurveTo(18+len*.5,w,18,w*.5); const g=ctx.createLinearGradient(18,0,18+len,0); g.addColorStop(0,'rgba(255,170,170,.6)'); g.addColorStop(1,'rgba(255,120,120,.9)'); ctx.fillStyle=g; ctx.fill(); ctx.strokeStyle='rgba(255,160,160,.8)'; ctx.lineWidth=1; ctx.stroke(); ctx.beginPath(); for(let i=0;i&lt;5;i++){ const t2=i/4, px=18+len*(.7+.25*t2),</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="ja"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="utf-8" /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;Clione: Buccal Cone Hunt (iPhone</span><span class="s2">縦版</span><span class="s1">)&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>:root { --glass: rgba(0,0,0,.45); --txt:#fff; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>html, body { height: 100%; margin: 0; background: radial-gradient(1200px 600px at 50% 0%, #0e2a40 0%, #06131b 70%); color: var(--txt); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.safe { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.wrap { display:flex; flex-direction:column; align-items:center; gap:10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>h1 { margin: 4px 0 0; font-size: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.sub { opacity:.85; font-size: 14px; text-align:center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.board { position:relative; width:min(100%, 420px); aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; box-shadow:0 10px 30px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.08); touch-action:none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>canvas { width:100%; height:100%; display:block; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hud { pointer-events:none; position:absolute; top:6px; left:6px; right:6px; display:flex; justify-content:space-between; gap:6px; font-weight:700; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.pill { background:var(--glass); backdrop-filter: blur(5px); padding:6px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.08); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.overlay { position:absolute; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.6); backdrop-filter: blur(4px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.card { max-width: 320px; text-align:center; padding:16px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.controls { position:absolute; left:0; right:0; bottom:6px; display:flex; justify-content:center; gap:8px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>button { appearance:none; border:none; cursor:pointer; padding:12px 16px; border-radius:999px; font-weight:800; box-shadow:0 6px 16px rgba(0,0,0,.25); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.btn { background:#fff; color:#000; } .btn-g{background:#86efac;color:#000;} .btn-r{background:#fda4af;color:#000;} .btn-k{background:#000;color:#fff;border:1px solid rgba(255,255,255,.2);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.combo { pointer-events:none; position:absolute; top:44px; left:50%; transform:translateX(-50%); text-align:center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.bar { margin-top:4px; height:4px; width:120px; border-radius:999px; background:rgba(255,255,255,.2); overflow:hidden; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.bar&gt;i { display:block; height:100%; background:#fff; width:0%; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.footer { font-size:12px; opacity:.75; text-align:center; }</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="safe"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Clione: Buccal Cone Hunt&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;</span><span class="s2">画面ドラッグで移動・</span><span class="s1">&lt;b&gt;Attack&lt;/b&gt;</span><span class="s2">でバッカルコーン（外付け</span><span class="s1">KB</span><span class="s2">は</span><span class="s1">Space</span><span class="s2">）。</span><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="board" id="board"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;canvas id="cv"&gt;&lt;/canvas&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="hud"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Score: &lt;b id="sc"&gt;0&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Time: &lt;b id="tm"&gt;60&lt;/b&gt;s&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Best: &lt;b id="bs"&gt;0&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="combo" id="comboWrap" style="display:none"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="pill" style="display:inline-block;background:rgba(244,63,94,.8);"&gt;Combo x&lt;b id="cx"&gt;0&lt;/b&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bar"&gt;&lt;i id="cb" style="width:0%"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="overlay" id="ovl"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 style="margin:0 0 6px;font-size:18px;"&gt;</span><span class="s2">遊び方</span><span class="s1">&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p style="margin:0 0 10px;opacity:.9;font-size:14px;"&gt;</span><span class="s2">画面ドラッグでクリオネが泳ぎます。</span><span class="s1">&lt;br&gt;</span><span class="s2">下の</span><span class="s1"> &lt;b&gt;Attack&lt;/b&gt; </span><span class="s2">で捕食。連続ヒットでコンボ！</span><span class="s1">&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="start1"&gt;</span><span class="s2">スタート</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="controls"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn" id="attack"&gt;Attack&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn-g" id="start"&gt;</span><span class="s2">スタート</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn-k" id="help"&gt;</span><span class="s2">ヘルプ</span><span class="s1">&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="footer"&gt;iPhone</span><span class="s2">向け単一</span><span class="s1">HTML</span><span class="s2">。</span><span class="s1">GitHub Pages</span><span class="s2">で公開してください。</span><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cv = document.getElementById('cv');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const board = document.getElementById('board');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ctx = cv.getContext('2d');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const sc = document.getElementById('sc');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const tm = document.getElementById('tm');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const bs = document.getElementById('bs');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const comboWrap = document.getElementById('comboWrap');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cx = document.getElementById('cx');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cb = document.getElementById('cb');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ovl = document.getElementById('ovl');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const start1 = document.getElementById('start1');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const start = document.getElementById('start');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const help = document.getElementById('help');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const attack = document.getElementById('attack');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let running = false, score = 0, best = 0, timeLeft = 60;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let lastTs = 0, lastSpawn = 0, spawnInterval = 1100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let timerId = null, req = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let comboCnt = 0, comboDecay = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const COMBO_WINDOW = 1200;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const game = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>w: 360, h: 640,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cl: { x: 180, y: 360, vx:0, vy:0, ang: -Math.PI/2, sp:2.0, fr:0.94, cone:{active:false, t:0, maxLen:90, cd:0} },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>prey: [], parts: []</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// </span><span class="s2">リサイズ</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function resize() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const dpr = Math.min(window.devicePixelRatio||1, 2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const rect = board.getBoundingClientRect();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>game.w = Math.floor(rect.width);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>game.h = Math.floor(rect.height);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.width = Math.floor(game.w * dpr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.height = Math.floor(game.h * dpr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.style.width = game.w + 'px';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.style.height = game.h + 'px';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.setTransform(dpr,0,0,dpr,0,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>addEventListener('resize', resize, {passive:true});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>resize();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// </span><span class="s2">タッチ移動</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>(function touchCtl(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let touching=false, tx=0, ty=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function pos(e){ const r=cv.getBoundingClientRect(); const t=(e.touches&amp;&amp;e.touches[0])||e; return {x:t.clientX-r.left, y:t.clientY-r.top}; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchstart', e=&gt;{ touching=true; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchmove',<span class="Apple-converted-space">  </span>e=&gt;{ if(!touching) return; ({x:tx,y:ty}=pos(e)); e.preventDefault(); }, {passive:false});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>cv.addEventListener('touchend', <span class="Apple-converted-space">  </span>e=&gt;{ touching=false; e.preventDefault(); }, {passive:false});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>(function tick(){ if(touching){ const cl=game.cl; const dx=tx-cl.x, dy=ty-cl.y; const L=Math.hypot(dx,dy)||1; cl.vx+=(dx/L)*0.5; cl.vy+=(dy/L)*0.5; cl.ang=Math.atan2(dy,dx);} requestAnimationFrame(tick); })();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>})();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">  </span>// </span><span class="s1">キーボード入力（オプション）</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const keys = Object.create(null);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>addEventListener('keydown', e =&gt; { keys[e.key.toLowerCase()] = true; if(e.key===' ') e.preventDefault(); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>addEventListener('keyup', <span class="Apple-converted-space">  </span>e =&gt; keys[e.key.toLowerCase()] = false);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function vibrate(p){ if(navigator.vibrate){ try{ navigator.vibrate(p); }catch(e){} } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function startGame(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>score=0; timeLeft=60; lastTs=0; lastSpawn=0; spawnInterval=1100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>comboCnt=0; comboDecay=0; comboWrap.style.display='none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const cl=game.cl; cl.x=game.w*0.5; cl.y=game.h*0.65; cl.vx=cl.vy=0; cl.ang=-Math.PI/2; cl.cone.active=false; cl.cone.t=0; cl.cone.cd=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>game.prey.length=0; game.parts.length=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>running=true; ovl.style.display='none'; start.textContent='</span><span class="s2">一時停止</span><span class="s1">';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>sc.textContent=score; tm.textContent=timeLeft;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(timerId) clearInterval(timerId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>timerId=setInterval(()=&gt;{ if(!running) return; timeLeft--; if(timeLeft&lt;=0){ timeLeft=0; endGame(); } tm.textContent=timeLeft; },1000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>req=requestAnimationFrame(loop);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function endGame(){ running=false; ovl.style.display='grid'; best=Math.max(best,score); bs.textContent=best; start.textContent='</span><span class="s2">スタート</span><span class="s1">'; if(timerId){ clearInterval(timerId); timerId=null; } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function doAttack(){ const c=game.cl.cone; if(c.cd&gt;0||c.active) return; c.active=true; c.t=0; c.cd=240; vibrate(8); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>attack.addEventListener('click', e=&gt;{ e.preventDefault(); doAttack(); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>attack.addEventListener('touchstart', e=&gt;{ e.preventDefault(); doAttack(); }, {passive:false});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>start1.addEventListener('click', startGame);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>start.addEventListener('click', ()=&gt;{ if(!running) startGame(); else { running=false; start.textContent='</span><span class="s2">スタート</span><span class="s1">'; } });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>help.addEventListener('click', ()=&gt;{ ovl.style.display = (ovl.style.display==='none'?'grid':'none'); });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// </span><span class="s2">敵の生成</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function spawn(){ const t=Math.random(); if(t&lt;0.7){ const x=30+Math.random()*(game.w-60), y=-30, sp=0.8+Math.random()*1.3; game.prey.push({x,y,r:10+Math.random()*12,vx:(Math.random()-0.5)*0.6,vy:sp,w:Math.random()*Math.PI*2,a:true}); } else { const L=Math.random()&lt;0.5, x=L?-30:game.w+30, y=60+Math.random()*(game.h-180), sp=0.8+Math.random()*1.2; game.prey.push({x,y,r:10+Math.random()*12,vx:L?sp:-sp,vy:(Math.random()-0.5)*0.6,w:Math.random()*Math.PI*2,a:true}); } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function parts(x,y){ for(let i=0;i&lt;12;i++){ const a=Math.random()*Math.PI*2, sp=Math.random()*2+0.5; game.parts.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:1}); } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function computeBonus(cnt){ return Math.floor(cnt/5); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function handleKeys(){ const k=keys, cl=game.cl, A=0.36; if(k[' ']) doAttack(); if(k['arrowleft']||k['a']) cl.vx-=cl.sp*A; if(k['arrowright']||k['d']) cl.vx+=cl.sp*A; if(k['arrowup']||k['w']) cl.vy-=cl.sp*A; if(k['arrowdown']||k['s']) cl.vy+=cl.sp*A; cl.vx*=cl.fr; cl.vy*=cl.fr; cl.x+=cl.vx; cl.y+=cl.vy; cl.x=Math.max(20, Math.min(game.w-20, cl.x)); cl.y=Math.max(20, Math.min(game.h-20, cl.y)); if(cl.vx||cl.vy) cl.ang=Math.atan2(cl.vy,cl.vx); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function updateCone(dt){ const c=game.cl.cone; if(c.cd&gt;0) c.cd-=dt; if(c.active){ c.t+=dt/200; if(c.t&gt;=1){ c.t=1; c.active=false; c.cd=Math.max(c.cd,150);} } else if(c.t&gt;0){ c.t-=dt/320; if(c.t&lt;0) c.t=0; } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function onHit(x,y){ parts(x,y); comboCnt++; comboDecay=COMBO_WINDOW; comboWrap.style.display='block'; cx.textContent=comboCnt; const bonus=computeBonus(comboCnt); score += 1+bonus; sc.textContent=score; vibrate([12,40,12]); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function checkCollisions(){ const cl=game.cl, c=cl.cone; if(c.t&lt;=0.05) return; const len=c.maxLen*c.t, tipX=cl.x+Math.cos(cl.ang)*(28+len), tipY=cl.y+Math.sin(cl.ang)*(28+len); for(const p of game.prey){ if(!p.a) continue; const dx=p.x-tipX, dy=p.y-tipY; if(dx*dx+dy*dy&lt;(p.r+10)*(p.r+10)){ p.a=false; onHit(p.x,p.y);} } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// </span><span class="s2">描画</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function bg(){ const g=ctx.createLinearGradient(0,0,0,game.h); g.addColorStop(0,'#0b1f2e'); g.addColorStop(1,'#06131b'); ctx.fillStyle=g; ctx.fillRect(0,0,game.w,game.h); ctx.globalAlpha=.15; for(let i=0;i&lt;38;i++){ const x=(i*37+(Date.now()/9))%game.w, y=((i*101)%game.h)+Math.sin((Date.now()/900)+i)*8; ctx.beginPath(); ctx.arc(x,y,(i%6)+1,0,Math.PI*2); ctx.fillStyle='#9dd0ff'; ctx.fill(); } ctx.globalAlpha=1; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function drawCl(){ const cl=game.cl; ctx.save(); ctx.translate(cl.x,cl.y); ctx.rotate(cl.ang); ctx.beginPath(); ctx.ellipse(0,0,22,28,0,0,Math.PI*2); const b=ctx.createRadialGradient(-6,-8,5,0,0,30); b.addColorStop(0,'rgba(255,255,255,.9)'); b.addColorStop(1,'rgba(200,220,255,.1)'); ctx.fillStyle=b; ctx.fill(); ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=1.5; ctx.stroke(); ctx.save(); const flap=Math.sin(Date.now()/150)*0.4; ctx.rotate(flap); ctx.beginPath(); ctx.ellipse(-6,10,14,6,-.5,0,Math.PI*2); ctx.ellipse(-6,-10,14,6,.5,0,Math.PI*2); ctx.fillStyle='rgba(255,200,200,.35)'; ctx.fill(); ctx.restore(); if(cl.cone.t&gt;0){ const t=cl.cone.t, len=8+cl.cone.maxLen*t, w=6+10*(1-t); ctx.beginPath(); ctx.moveTo(18,-w*.5); ctx.quadraticCurveTo(18+len*.5,-w,18+len,0); ctx.quadraticCurveTo(18+len*.5,w,18,w*.5); const g=ctx.createLinearGradient(18,0,18+len,0); g.addColorStop(0,'rgba(255,170,170,.6)'); g.addColorStop(1,'rgba(255,120,120,.9)'); ctx.fillStyle=g; ctx.fill(); ctx.strokeStyle='rgba(255,160,160,.8)'; ctx.lineWidth=1; ctx.stroke(); ctx.beginPath(); for(let i=0;i&lt;5;i++){ const t2=i/4, px=18+len*(.7+.25*t2), py=(i%2===0?-1:1)*(w*.4+i*.4); ctx.moveTo(px,-py); ctx.lineTo(px+6,-py*1.1);} ctx.strokeStyle='rgba(255,200,200,.7)'; ctx.lineWidth=.6; ctx.stroke(); } ctx.beginPath(); ctx.arc(-6,-6,1.6,0,Math.PI*2); ctx.arc(-6,6,1.6,0,Math.PI*2); ctx.fillStyle='rgba(80,80,120,.9)'; ctx.fill(); ctx.restore(); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function drawPrey(dt){ for(const p of game.prey){ if(!p.a) continue; p.x+=p.vx; p.y+=p.vy+Math.sin((Date.now()/300)+p.w)*.3; if(p.x&lt;-60||p.x&gt;game.w+60||p.y&lt;-60||p.y&gt;game.h+60) p.a=false; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='#a9f5d0'; ctx.fill(); ctx.strokeStyle='#7ad0aa'; ctx.stroke(); ctx.beginPath(); ctx.arc(p.x+p.r*.2,p.y-p.r*.2,Math.max(1,p.r*.15),0,Math.PI*2); ctx.fillStyle='#2a5a50'; ctx.fill(); } for(const q of game.parts){ q.x+=q.vx; q.y+=q.vy; q.vx*=.98; q.vy*=.98; q.life-=dt/900; } game.parts=game.parts.filter(q=&gt;q.life&gt;0); ctx.save(); ctx.globalAlpha=.7; for(const q of game.parts){ ctx.beginPath(); ctx.arc(q.x,q.y,2,0,Math.PI*2); ctx.fillStyle='#ffd3d3'; ctx.fill(); } ctx.restore(); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function loop(ts){ if(!running) return; if(!lastTs) lastTs=ts; const dt=Math.min(34, ts-lastTs); lastTs=ts;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(comboDecay&gt;0){ comboDecay-=dt; const ratio=Math.max(0, Math.min(1, comboDecay/COMBO_WINDOW)); cb.style.width=(ratio*100)+'%'; if(comboDecay&lt;=0){ comboCnt=0; comboWrap.style.display='none'; } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>lastSpawn+=dt; if(lastSpawn&gt;spawnInterval){ lastSpawn=0; spawn(); spawnInterval=Math.max(450, spawnInterval-10); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>handleKeys(); updateCone(dt); checkCollisions();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bg(); drawPrey(dt); drawCl();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>req=requestAnimationFrame(loop);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>setInterval(()=&gt;{ game.prey = game.prey.filter(p=&gt;p.a); }, 1500);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">})();</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
