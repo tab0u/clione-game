@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ja"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /&gt;</p>
+<p class="p1">&lt;title&gt;Clione: Buccal Cone Hunt (iPhone縦版)&lt;/title&gt;</p>
+<p class="p1">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</p>
+<p class="p1">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>:root { --glass: rgba(0,0,0,.45); --txt:#fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>html, body { height: 100%; margin: 0; background: radial-gradient(1200px 600px at 50% 0%, #0e2a40 0%, #06131b 70%); color: var(--txt); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.safe { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.wrap { display:flex; flex-direction:column; align-items:center; gap:10px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>h1 { margin: 4px 0 0; font-size: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sub { opacity:.85; font-size: 14px; text-align:center; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.board { position:relative; width:min(100%, 420px); aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; box-shadow:0 10px 30px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.08); touch-action:none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>canvas { width:100%; height:100%; display:block; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hud { pointer-events:none; position:absolute; top:6px; left:6px; right:6px; display:flex; justify-content:space-between; gap:6px; font-weight:700; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pill { background:var(--glass); backdrop-filter: blur(5px); padding:6px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.08); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.overlay { position:absolute; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.6); backdrop-filter: blur(4px); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card { max-width: 320px; text-align:center; padding:16px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.controls { position:absolute; left:0; right:0; bottom:6px; display:flex; justify-content:center; gap:8px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>button { appearance:none; border:none; cursor:pointer; padding:12px 16px; border-radius:999px; font-weight:800; box-shadow:0 6px 16px rgba(0,0,0,.25); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn { background:#fff; color:#000; } .btn-g{background:#86efac;color:#000;} .btn-r{background:#fda4af;color:#000;} .btn-k{background:#000;color:#fff;border:1px solid rgba(255,255,255,.2);}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.combo { pointer-events:none; position:absolute; top:44px; left:50%; transform:translateX(-50%); text-align:center; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar { margin-top:4px; height:4px; width:120px; border-radius:999px; background:rgba(255,255,255,.2); overflow:hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bar&gt;i { display:block; height:100%; background:#fff; width:0%; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.footer { font-size:12px; opacity:.75; text-align:center; }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="safe"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Clione: Buccal Cone Hunt&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sub"&gt;画面ドラッグで移動・&lt;b&gt;Attack&lt;/b&gt;でバッカルコーン（外付けKBはSpace）。&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="board" id="board"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="cv"&gt;&lt;/canvas&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hud"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Score: &lt;b id="sc"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Time: &lt;b id="tm"&gt;60&lt;/b&gt;s&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill"&gt;Best: &lt;b id="bs"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="combo" id="comboWrap" style="display:none"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pill" style="display:inline-block;background:rgba(244,63,94,.8);"&gt;Combo x&lt;b id="cx"&gt;0&lt;/b&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bar"&gt;&lt;i id="cb" style="width:0%"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="overlay" id="ovl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 style="margin:0 0 6px;font-size:18px;"&gt;遊び方&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p style="margin:0 0 10px;opacity:.9;font-size:14px;"&gt;画面ドラッグでクリオネが泳ぎます。&lt;br&gt;下の &lt;b&gt;Attack&lt;/b&gt; で捕食。連続ヒットでコンボ！&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="start1"&gt;スタート&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="controls"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" id="attack"&gt;Attack&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-g" id="start"&gt;スタート&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn-k" id="help"&gt;ヘルプ&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer"&gt;iPhone向け単一HTML。GitHub Pagesで公開してください。&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const cv = document.getElementById('cv');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const board = document.getElementById('board');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const ctx = cv.getContext('2d');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const sc = document.getElementById('sc');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const tm = document.getElementById('tm');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const bs = document.getElementById('bs');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const comboWrap = document.getElementById('comboWrap');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const cx = document.getElementById('cx');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const cb = document.getElementById('cb');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const ovl = document.getElementById('ovl');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const start1 = document.getElementById('start1');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const start = document.getElementById('start');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const help = document.getElementById('help');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const attack = document.getElementById('attack');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// ---（中略: ゲームのロジック全体。以前渡した clione_iphone.html と同じです）---</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 省略せずにフルコードが必要なら、この続きも展開します。</p>
+<p class="p1">})();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
